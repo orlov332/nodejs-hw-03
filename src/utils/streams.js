@@ -1,13 +1,14 @@
 import program from 'commander';
 import reverse from './reverse';
 import transform from './transform';
+import outputFile from './outputFile';
 
 program
     .version('1.0.0', '-v, --version')
     .option('-a, --action <actionName>', 'Action to processing <reverse|transform|outputFile|convertFromFile|convertToFile|cssBundler>',
         /^(reverse|transform|outputFile|convertFromFile|convertToFile|cssBundler)$/i)
     .option('-f, --file <filePath>', 'File to process')
-    .option('-p, --file <path>', 'Path to process')
+    .option('-p, --path <path>', 'Path to process')
     .parse(process.argv);
 
 function printErrorAndExit(message) {
@@ -26,6 +27,7 @@ try {
                 transform(process.stdin, process.stdout);
                 break;
             case 'outputFile':
+                outputFile(program.file, process.stdout);
                 break;
             case 'convertFromFile':
                 break;
@@ -39,3 +41,4 @@ try {
 } catch (e) {
     printErrorAndExit(e.message);
 }
+process.on('uncaughtException', (e) => printErrorAndExit(e.message));
