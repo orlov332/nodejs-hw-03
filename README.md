@@ -2,5 +2,5 @@
 Node.js Mentoring Program homework #03
 Commandline stream processing
 
-##How to use
+## How to use
 `npm start -- -h`
