@@ -1,9 +1,10 @@
 import program from 'commander';
 import reverse from './reverse';
 import transform from './transform';
-import outputFile from './outputFile';
+import outputFile from './output-file';
 import convertFromFile from './convert-from-file';
 import convertToFile from './convert-to-file';
+import cssBundler from './css-bundler';
 
 program
     .version('1.0.0', '-v, --version')
@@ -38,6 +39,7 @@ try {
                 convertToFile(program.file);
                 break;
             case 'cssBundler':
+                cssBundler(program.path);
                 break;
         }
     else
