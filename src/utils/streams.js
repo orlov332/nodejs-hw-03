@@ -1,5 +1,6 @@
 import program from 'commander';
 import reverse from './reverse';
+import transform from './transform';
 
 program
     .version('1.0.0', '-v, --version')
@@ -22,6 +23,7 @@ try {
                 reverse(process.stdin, process.stdout);
                 break;
             case 'transform':
+                transform(process.stdin, process.stdout);
                 break;
             case 'outputFile':
                 break;
