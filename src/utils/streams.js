@@ -3,6 +3,7 @@ import reverse from './reverse';
 import transform from './transform';
 import outputFile from './outputFile';
 import convertFromFile from './convert-from-file';
+import convertToFile from './convert-to-file';
 
 program
     .version('1.0.0', '-v, --version')
@@ -34,6 +35,7 @@ try {
                 convertFromFile(program.file, process.stdout);
                 break;
             case 'convertToFile':
+                convertToFile(program.file);
                 break;
             case 'cssBundler':
                 break;
