@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-hw-02",
+  "name": "nodejs-hw-03",
   "version": "1.0.0",
   "description": "Epam Mentoring Program homework",
   "main": "app.js",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node ./src/app.js"
+    "start": "babel-node ./src/utils/streams.js"
   },
   "author": "Valeriy Orlov <valeriy_orlov@epam.com>",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "csvjson": "^5.1.0"
+    "csvjson": "^5.1.0",
+    "commander": "latest"
   }
 }
